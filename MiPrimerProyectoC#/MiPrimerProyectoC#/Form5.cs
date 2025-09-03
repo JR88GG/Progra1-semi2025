@@ -21,73 +21,70 @@ namespace MiPrimerProyectoC_
         {
 
         }
-        /*
-           Monedas
-           Longitud
-           Masa
-           Volumen
-           Almacenamiento
-           Tiempo
-            */
-        String[][] etiquetas = new string[][] {
-            new string[]{"Dolar", "Pesos Mexicanos", "Quetzal", "Lempira", "Colon SV", "Cordobas", "Colon CR"}, //Monedas
-            new string[]{"Metros", "Cm", "Pulgadas","Pie", "Varas", "Yardas", "Km", "Millas"}, //Longitud
-            new string[]{"Libra", "Onza", "Gramo", "Kg", "Quintal", "Tonelada Corta"}, //Masa
-            new string[]{"Galon Us", "Litros", "Pinta Us", "Ml"}, //Volumen
-            new string[]{"GB", "Bit", "Byte", "KB", "MG", "TB"}, //Almacenamiento
-            new string[]{"Dia", "Segundos", "Minutos", "Horas", "Semana", "Meses", "Año"}, //Tiempo
-            new string[]{"Km2", "Mt2", "Milla cuadrada", "Yarda Cuadrada", "Pie cuadrado", "Pulgada Cuadrada", "Hectarea"}//Area
+        //calculo de impuestos del ususario
+        double[][] impuestos = new double[][] {
+            new double[]{00.1,500,1.5,0},//banda 1
+            new double[]{500.01,1000,1.5,3},//banda 2
+            new double[]{1000.01,2000,3,3},//banda3
+            new double[]{2000.01,3000,6,3},//banda 4
+            new double[]{3000.01,6000,9,2},//banda 5
+            new double[]{8000.01,18000,15,2},//banda 6
+            new double[]{18000.01,30000,39,2},//banda 7
+            new double[]{30000.01,60000,63,1},//banda 8
+            new double[]{60000.01,100000,93,0.8},//banda 9
+            new double[]{100000.01,200000,125,0.7},//banda 10
+            new double[]{200000.01,300000,195,0.6},//banda 11
+            new double[]{300000.01,400000,255,0.45},//banda 12
+            new double[]{400000.01,500000,300,0.4},//banda 13
+            new double[]{500000.01,1000000,340,0.30},//banda 14
+            new double[]{1000000.01,99999999,490,0.18},//banda 15
+        };
 
-        };
-        double[][] valores = new double[][] {
-            new double []{1,18.78, 7.66, 26.15, 8.75, 36.78, 504.12}, //Monedas
-            new double []{1, 100, 39.37, 3.28084, 1.193, 1.09361, 0.001, 0.000621371}, //Longitud
-            new double []{1, 16, 453.592, 0.453592, 0.01, 0.001,0.0005}, //Masa
-            new double []{1, 3.78541, 8, 3785.41}, //Volumen
-            new double []{1, 8e+9, 1e+9, 1e+6, 1000, 0.001}, //Almacenamiento
-            new double []{1, 86400, 1440, 24, 0.142857, 0.0328767, 0.00273973}, //Tiempo
-            new double []{1, 1e+6, 0.386102, 1.196e+6, 1.076e+7, 1.55e+9, 100} //Area
-        };
-        private double convertir(int tipo, int de, int a, double cantidad)
+        private double Calcular(double monto)
         {
-            if (cantidad <= 0)
+            for (int i = 0; i < impuestos.Length; i++)//se evalua en que rango entra el monto ingresado
             {
-                return 0;
+                if (monto >= impuestos[i][0] && monto <= impuestos[i][1])
+                {
+                    double desde = impuestos[i][0];
+                    double precio = impuestos[i][2];//se asignan variables a los diferentes indices
+                    double adicional = impuestos[i][3];
+
+                    return monto = (monto - desde) / 1000 * adicional + precio; //se calcula el impuesto sobre el monto 
+                }
+
             }
-            return cantidad * valores[tipo][a] / valores[tipo][de];
+            return 0;//en caso que el monto no entre en ningun rango
         }
 
-        //luego de borrar los objetos que se habia generado en
-        //el presente archivo un boton y el combo box volver a generarlo dandole 
-        //click el programa los reconocio y funciono 
-        private void btnConvertir_Click_1(object sender, EventArgs e)
+        private void btnCalcular_Click(object sender, EventArgs e)
         {
-            try
             {
-                double cantidad = double.Parse(txtCantidadConversor.Text);
+                try
+                {
+                    // se obtiene el valor del txtMonto y luego se convierte a tipo decimal y se el aplica la funcion calcular
+                    double monto = Convert.ToDouble(txtMonto.Text);
+                    double impuesto = Calcular(monto);
 
-                int tipo = cboTipoConversor.SelectedIndex;
-                int de = cboDeConversor.SelectedIndex;
-                int a = cboAConversor.SelectedIndex;
+                    // Mostrar el resultado en el Label
+                    lblMontoCalculado.Text = "Monto calculado: " + impuesto.ToString("C2");
+                }
+                catch
+                {
+                    MessageBox.Show("Ingrese un valor numérico válido.");
+                    txtMonto.Text = string.Empty;//para limpiar algun dato invalido que no sea tipo entero o decimal
+                }
 
-                double respuesta = convertir(tipo, de, a, cantidad);
 
-                lblRespuestaConversor.Text = "Respuesta: " + respuesta.ToString("N2");
-            }
-            catch (Exception er)
-            {
-                lblRespuestaConversor.Text = "Error " + er.Message + " solo valores validos";
             }
         }
 
-        private void cboTipoConversor_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-            cboDeConversor.Items.Clear();
-            cboAConversor.Items.Clear();
-
-            cboDeConversor.Items.AddRange(etiquetas[cboTipoConversor.SelectedIndex]);
-            cboAConversor.Items.AddRange(etiquetas[cboTipoConversor.SelectedIndex]);
+            Close();
         }
     }
-    }
+}
+
+  
 

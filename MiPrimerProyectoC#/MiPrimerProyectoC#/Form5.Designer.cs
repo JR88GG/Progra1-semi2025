@@ -28,134 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboTipoConversor = new System.Windows.Forms.ComboBox();
-            this.cboDeConversor = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboAConversor = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnConvertir = new System.Windows.Forms.Button();
-            this.lblCantidadConversor = new System.Windows.Forms.Label();
-            this.txtCantidadConversor = new System.Windows.Forms.TextBox();
-            this.lblRespuestaConversor = new System.Windows.Forms.Label();
+            this.lblSueldo = new System.Windows.Forms.Label();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.lblMontoCalculado = new System.Windows.Forms.Label();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblSueldo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo:";
+            this.lblSueldo.AutoSize = true;
+            this.lblSueldo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSueldo.Location = new System.Drawing.Point(22, 81);
+            this.lblSueldo.Name = "lblSueldo";
+            this.lblSueldo.Size = new System.Drawing.Size(97, 25);
+            this.lblSueldo.TabIndex = 7;
+            this.lblSueldo.Text = "Cantidad:";
             // 
-            // cboTipoConversor
+            // txtMonto
             // 
-            this.cboTipoConversor.FormattingEnabled = true;
-            this.cboTipoConversor.Items.AddRange(new object[] {
-            "Monedas",
-            "Longitud",
-            "Masa",
-            "Volumen",
-            "Almacenamiento",
-            "Tiempo",
-            "Area"});
-            this.cboTipoConversor.Location = new System.Drawing.Point(98, 49);
-            this.cboTipoConversor.Name = "cboTipoConversor";
-            this.cboTipoConversor.Size = new System.Drawing.Size(162, 24);
-            this.cboTipoConversor.TabIndex = 1;
-            this.cboTipoConversor.SelectedIndexChanged += new System.EventHandler(this.cboTipoConversor_SelectedIndexChanged);
+            this.txtMonto.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtMonto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMonto.Location = new System.Drawing.Point(125, 83);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(222, 22);
+            this.txtMonto.TabIndex = 8;
             // 
-            // cboDeConversor
+            // lblMontoCalculado
             // 
-            this.cboDeConversor.Location = new System.Drawing.Point(98, 101);
-            this.cboDeConversor.Name = "cboDeConversor";
-            this.cboDeConversor.Size = new System.Drawing.Size(162, 24);
-            this.cboDeConversor.TabIndex = 10;
+            this.lblMontoCalculado.AutoSize = true;
+            this.lblMontoCalculado.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMontoCalculado.Location = new System.Drawing.Point(22, 143);
+            this.lblMontoCalculado.Name = "lblMontoCalculado";
+            this.lblMontoCalculado.Size = new System.Drawing.Size(177, 25);
+            this.lblMontoCalculado.TabIndex = 9;
+            this.lblMontoCalculado.Text = "Monto calculado:?";
             // 
-            // label2
+            // btnCalcular
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "De:";
+            this.btnCalcular.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.Location = new System.Drawing.Point(390, 66);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnCalcular.Size = new System.Drawing.Size(139, 52);
+            this.btnCalcular.TabIndex = 6;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
-            // cboAConversor
+            // btnSalir
             // 
-            this.cboAConversor.FormattingEnabled = true;
-            this.cboAConversor.Location = new System.Drawing.Point(98, 152);
-            this.cboAConversor.Name = "cboAConversor";
-            this.cboAConversor.Size = new System.Drawing.Size(162, 24);
-            this.cboAConversor.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "A:";
-            // 
-            // btnConvertir
-            // 
-            this.btnConvertir.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertir.Location = new System.Drawing.Point(399, 102);
-            this.btnConvertir.Name = "btnConvertir";
-            this.btnConvertir.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnConvertir.Size = new System.Drawing.Size(139, 52);
-            this.btnConvertir.TabIndex = 6;
-            this.btnConvertir.Text = "convertir";
-            this.btnConvertir.UseVisualStyleBackColor = true;
-            this.btnConvertir.Click += new System.EventHandler(this.btnConvertir_Click_1);
-            // 
-            // lblCantidadConversor
-            // 
-            this.lblCantidadConversor.AutoSize = true;
-            this.lblCantidadConversor.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadConversor.Location = new System.Drawing.Point(27, 218);
-            this.lblCantidadConversor.Name = "lblCantidadConversor";
-            this.lblCantidadConversor.Size = new System.Drawing.Size(97, 25);
-            this.lblCantidadConversor.TabIndex = 7;
-            this.lblCantidadConversor.Text = "Cantidad:";
-            // 
-            // txtCantidadConversor
-            // 
-            this.txtCantidadConversor.Location = new System.Drawing.Point(148, 220);
-            this.txtCantidadConversor.Name = "txtCantidadConversor";
-            this.txtCantidadConversor.Size = new System.Drawing.Size(144, 22);
-            this.txtCantidadConversor.TabIndex = 8;
-            // 
-            // lblRespuestaConversor
-            // 
-            this.lblRespuestaConversor.AutoSize = true;
-            this.lblRespuestaConversor.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRespuestaConversor.Location = new System.Drawing.Point(27, 269);
-            this.lblRespuestaConversor.Name = "lblRespuestaConversor";
-            this.lblRespuestaConversor.Size = new System.Drawing.Size(68, 25);
-            this.lblRespuestaConversor.TabIndex = 9;
-            this.lblRespuestaConversor.Text = "Suma:";
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(390, 160);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSalir.Size = new System.Drawing.Size(139, 52);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 353);
-            this.Controls.Add(this.lblRespuestaConversor);
-            this.Controls.Add(this.txtCantidadConversor);
-            this.Controls.Add(this.lblCantidadConversor);
-            this.Controls.Add(this.btnConvertir);
-            this.Controls.Add(this.cboAConversor);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cboDeConversor);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cboTipoConversor);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.lblMontoCalculado);
+            this.Controls.Add(this.txtMonto);
+            this.Controls.Add(this.lblSueldo);
+            this.Controls.Add(this.btnCalcular);
             this.Name = "Form5";
             this.Text = "Form5";
             this.Load += new System.EventHandler(this.Form5_Load);
@@ -165,16 +109,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboTipoConversor;
-        private System.Windows.Forms.ComboBox cboDeConversor;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cboAConversor;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnConvertir;
-        private System.Windows.Forms.Label lblCantidadConversor;
-        private System.Windows.Forms.TextBox txtCantidadConversor;
-        private System.Windows.Forms.Label lblRespuestaConversor;
+        private System.Windows.Forms.Label lblSueldo;
+        private System.Windows.Forms.TextBox txtMonto;
+        private System.Windows.Forms.Label lblMontoCalculado;
+        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
