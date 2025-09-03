@@ -42,18 +42,19 @@
             // btnConvertir
             // 
             this.btnConvertir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertir.Location = new System.Drawing.Point(437, 126);
+            this.btnConvertir.Location = new System.Drawing.Point(465, 155);
             this.btnConvertir.Name = "btnConvertir";
-            this.btnConvertir.Size = new System.Drawing.Size(107, 65);
+            this.btnConvertir.Size = new System.Drawing.Size(134, 65);
             this.btnConvertir.TabIndex = 0;
             this.btnConvertir.Text = "Convertir";
             this.btnConvertir.UseVisualStyleBackColor = true;
+            this.btnConvertir.Click += new System.EventHandler(this.btnConvertir_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(122, 126);
+            this.label1.Location = new System.Drawing.Point(109, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 22);
             this.label1.TabIndex = 1;
@@ -61,6 +62,7 @@
             // 
             // cboMedidaOrigen
             // 
+            this.cboMedidaOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMedidaOrigen.FormattingEnabled = true;
             this.cboMedidaOrigen.Items.AddRange(new object[] {
             "Metro Cuadrado",
@@ -72,21 +74,21 @@
             "Hectareas"});
             this.cboMedidaOrigen.Location = new System.Drawing.Point(224, 178);
             this.cboMedidaOrigen.Name = "cboMedidaOrigen";
-            this.cboMedidaOrigen.Size = new System.Drawing.Size(154, 24);
+            this.cboMedidaOrigen.Size = new System.Drawing.Size(207, 24);
             this.cboMedidaOrigen.TabIndex = 2;
             // 
             // txtCantidadConversor
             // 
             this.txtCantidadConversor.Location = new System.Drawing.Point(224, 126);
             this.txtCantidadConversor.Name = "txtCantidadConversor";
-            this.txtCantidadConversor.Size = new System.Drawing.Size(154, 22);
+            this.txtCantidadConversor.Size = new System.Drawing.Size(207, 22);
             this.txtCantidadConversor.TabIndex = 3;
             // 
             // lblMedidaOrigen
             // 
             this.lblMedidaOrigen.AutoSize = true;
             this.lblMedidaOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedidaOrigen.Location = new System.Drawing.Point(76, 176);
+            this.lblMedidaOrigen.Location = new System.Drawing.Point(63, 176);
             this.lblMedidaOrigen.Name = "lblMedidaOrigen";
             this.lblMedidaOrigen.Size = new System.Drawing.Size(142, 22);
             this.lblMedidaOrigen.TabIndex = 4;
@@ -96,7 +98,7 @@
             // 
             this.lblMedidaAObtener.AutoSize = true;
             this.lblMedidaAObtener.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedidaAObtener.Location = new System.Drawing.Point(47, 229);
+            this.lblMedidaAObtener.Location = new System.Drawing.Point(26, 229);
             this.lblMedidaAObtener.Name = "lblMedidaAObtener";
             this.lblMedidaAObtener.Size = new System.Drawing.Size(171, 22);
             this.lblMedidaAObtener.TabIndex = 6;
@@ -104,6 +106,7 @@
             // 
             // cboMedidaAObtener
             // 
+            this.cboMedidaAObtener.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMedidaAObtener.FormattingEnabled = true;
             this.cboMedidaAObtener.Items.AddRange(new object[] {
             "Metro Cuadrado",
@@ -115,7 +118,7 @@
             "Hectareas"});
             this.cboMedidaAObtener.Location = new System.Drawing.Point(224, 231);
             this.cboMedidaAObtener.Name = "cboMedidaAObtener";
-            this.cboMedidaAObtener.Size = new System.Drawing.Size(154, 24);
+            this.cboMedidaAObtener.Size = new System.Drawing.Size(207, 24);
             this.cboMedidaAObtener.TabIndex = 5;
             // 
             // label2
@@ -133,7 +136,7 @@
             // 
             this.lblConversion.AutoSize = true;
             this.lblConversion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConversion.Location = new System.Drawing.Point(90, 277);
+            this.lblConversion.Location = new System.Drawing.Point(69, 277);
             this.lblConversion.Name = "lblConversion";
             this.lblConversion.Size = new System.Drawing.Size(128, 22);
             this.lblConversion.TabIndex = 8;
@@ -143,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 349);
+            this.ClientSize = new System.Drawing.Size(700, 397);
             this.Controls.Add(this.lblConversion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblMedidaAObtener);
