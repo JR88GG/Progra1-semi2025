@@ -5,11 +5,11 @@ namespace wepappAcademica.Models
     {
         public MyDbContext() { }
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
-        public DbSet<Alumno> Alumnos { get; set; }
+        public DbSet<Alumno> alumnos { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Alumno>().HasKey(a => a.idAlumno);
+            modelBuilder.Entity<Alumno>().HasKey(a => a.IdAlumnos);
         }
     }
 }

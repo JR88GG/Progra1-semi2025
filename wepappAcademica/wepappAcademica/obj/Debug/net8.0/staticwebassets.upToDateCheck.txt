@@ -1,0 +1,3 @@
+wwwroot\Views\Shared\_ValidationScriptsPartial.cshtml
+wwwroot\img\UGB_LOGOTIPO_HORIZONTAL.webp
+wwwroot\Views\index.html
