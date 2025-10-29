@@ -1,3 +1,4 @@
 wwwroot\img\UGB_LOGOTIPO_HORIZONTAL.webp
+wwwroot\Views\alumno.html
 wwwroot\Views\Shared\_ValidationScriptsPartial.cshtml
 wwwroot\Views\index.html
