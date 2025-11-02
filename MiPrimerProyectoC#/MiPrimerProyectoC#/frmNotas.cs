@@ -41,13 +41,13 @@ namespace MiPrimerProyectoC_
         private void frmNotas_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'db_academicaDataSet.periodos' Puede moverla o quitarla según sea necesario.
-            this.periodosTableAdapter.Fill(this.db_academicaDataSet.periodos);
+           // this.periodosTableAdapter.Fill(this.db_academicaDataSet.periodos);
             // TODO: esta línea de código carga datos en la tabla 'db_academicaDataSet.materias' Puede moverla o quitarla según sea necesario.
-            this.materiasTableAdapter.Fill(this.db_academicaDataSet.materias);
+           // this.materiasTableAdapter.Fill(this.db_academicaDataSet.materias);
             // TODO: esta línea de código carga datos en la tabla 'db_academicaDataSet.dnotas' Puede moverla o quitarla según sea necesario.
-            this.dnotasTableAdapter.FilldNotas(this.db_academicaDataSet.dnotas);
+           // this.dnotasTableAdapter.FilldNotas(this.db_academicaDataSet.dnotas);
             // TODO: esta línea de código carga datos en la tabla 'db_academicaDataSet.notas' Puede moverla o quitarla según sea necesario.
-            this.notasTableAdapter.FillNotas(this.db_academicaDataSet.notas);
+          //  this.notasTableAdapter.FillNotas(this.db_academicaDataSet.notas);
 
             actualizarGrid();
         }
@@ -72,5 +72,7 @@ namespace MiPrimerProyectoC_
                 actualizarGrid();
             }
         }
+
+       
     }
 }

@@ -48,6 +48,46 @@
             ((System.ComponentModel.ISupportInitialize)(this.dnotasDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
+            // lblidNota
+            // 
+            lblidNota.AutoSize = true;
+            lblidNota.Location = new System.Drawing.Point(9, 22);
+            lblidNota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblidNota.Name = "lblidNota";
+            lblidNota.Size = new System.Drawing.Size(23, 16);
+            lblidNota.TabIndex = 10;
+            lblidNota.Text = "ID:";
+            // 
+            // lblMateria
+            // 
+            lblMateria.AutoSize = true;
+            lblMateria.Location = new System.Drawing.Point(9, 58);
+            lblMateria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblMateria.Name = "lblMateria";
+            lblMateria.Size = new System.Drawing.Size(55, 16);
+            lblMateria.TabIndex = 12;
+            lblMateria.Text = "Materia:";
+            // 
+            // lblPeriodo
+            // 
+            lblPeriodo.AutoSize = true;
+            lblPeriodo.Location = new System.Drawing.Point(527, 58);
+            lblPeriodo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblPeriodo.Name = "lblPeriodo";
+            lblPeriodo.Size = new System.Drawing.Size(71, 16);
+            lblPeriodo.TabIndex = 14;
+            lblPeriodo.Text = "PERIODO:";
+            // 
+            // lblFecha
+            // 
+            lblFecha.AutoSize = true;
+            lblFecha.Location = new System.Drawing.Point(9, 106);
+            lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new System.Drawing.Size(55, 16);
+            lblFecha.TabIndex = 16;
+            lblFecha.Text = "FECHA:";
+            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(899, 149);
@@ -103,16 +143,6 @@
             this.nota_final.ReadOnly = true;
             this.nota_final.Width = 125;
             // 
-            // lblidNota
-            // 
-            lblidNota.AutoSize = true;
-            lblidNota.Location = new System.Drawing.Point(9, 22);
-            lblidNota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblidNota.Name = "lblidNota";
-            lblidNota.Size = new System.Drawing.Size(23, 16);
-            lblidNota.TabIndex = 10;
-            lblidNota.Text = "ID:";
-            // 
             // idNotaLabel1
             // 
             this.idNotaLabel1.Location = new System.Drawing.Point(93, 22);
@@ -121,16 +151,6 @@
             this.idNotaLabel1.Size = new System.Drawing.Size(267, 28);
             this.idNotaLabel1.TabIndex = 11;
             this.idNotaLabel1.Text = "label1";
-            // 
-            // lblMateria
-            // 
-            lblMateria.AutoSize = true;
-            lblMateria.Location = new System.Drawing.Point(9, 58);
-            lblMateria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblMateria.Name = "lblMateria";
-            lblMateria.Size = new System.Drawing.Size(55, 16);
-            lblMateria.TabIndex = 12;
-            lblMateria.Text = "Materia:";
             // 
             // cboMateria
             // 
@@ -144,16 +164,6 @@
             this.cboMateria.TabIndex = 13;
             this.cboMateria.ValueMember = "idMateria";
             // 
-            // lblPeriodo
-            // 
-            lblPeriodo.AutoSize = true;
-            lblPeriodo.Location = new System.Drawing.Point(527, 58);
-            lblPeriodo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblPeriodo.Name = "lblPeriodo";
-            lblPeriodo.Size = new System.Drawing.Size(71, 16);
-            lblPeriodo.TabIndex = 14;
-            lblPeriodo.Text = "PERIODO:";
-            // 
             // cboPeriodo
             // 
             this.cboPeriodo.DisplayMember = "periodo";
@@ -165,16 +175,6 @@
             this.cboPeriodo.Size = new System.Drawing.Size(265, 24);
             this.cboPeriodo.TabIndex = 15;
             this.cboPeriodo.ValueMember = "idPeriodo";
-            // 
-            // lblFecha
-            // 
-            lblFecha.AutoSize = true;
-            lblFecha.Location = new System.Drawing.Point(9, 106);
-            lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblFecha.Name = "lblFecha";
-            lblFecha.Size = new System.Drawing.Size(55, 16);
-            lblFecha.TabIndex = 16;
-            lblFecha.Text = "FECHA:";
             // 
             // fechaDateTimePicker
             // 
