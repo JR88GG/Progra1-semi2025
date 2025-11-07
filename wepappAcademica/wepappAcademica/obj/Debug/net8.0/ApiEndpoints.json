@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "wepappAcademica.Controllers.AlumnosController",
+    "ContainingType": "webappacademica.Controllers.AlumnosController",
     "Method": "GetAlumnos",
     "RelativePath": "api/Alumnos",
     "HttpMethod": "GET",
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "ContainingType": "wepappAcademica.Controllers.AlumnosController",
+    "ContainingType": "webappacademica.Controllers.AlumnosController",
     "Method": "PostAlumno",
     "RelativePath": "api/Alumnos",
     "HttpMethod": "POST",
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "ContainingType": "wepappAcademica.Controllers.AlumnosController",
+    "ContainingType": "webappacademica.Controllers.AlumnosController",
     "Method": "GetAlumno",
     "RelativePath": "api/Alumnos/{id}",
     "HttpMethod": "GET",
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "ContainingType": "wepappAcademica.Controllers.AlumnosController",
+    "ContainingType": "webappacademica.Controllers.AlumnosController",
     "Method": "PutAlumno",
     "RelativePath": "api/Alumnos/{id}",
     "HttpMethod": "PUT",
@@ -93,7 +93,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "wepappAcademica.Controllers.AlumnosController",
+    "ContainingType": "webappacademica.Controllers.AlumnosController",
     "Method": "DeleteAlumno",
     "RelativePath": "api/Alumnos/{id}",
     "HttpMethod": "DELETE",
@@ -107,6 +107,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "webappacademica.Controllers.AlumnosController",
+    "Method": "BuscarAlumno",
+    "RelativePath": "api/Alumnos/buscar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "buscar",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[wepappAcademica.Models.Alumno, wepappAcademica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "wepappAcademica.Controllers.WeatherForecastController",

@@ -1,5 +1,5 @@
-﻿<form id="frmAlumnos">
-<div class="card border-secondary mb-3" style="min-width: 700px;">
+﻿<form id="frmAlumno">
+    <div class="card border-secondary mb-3" style="min-width: 700px;">
         <div class="card-header">
             <div class="d-flex">
                 Administracion de Alumnos
@@ -45,6 +45,8 @@
     </div>
 </form>
 <script>
+    var accion = 'nuevo',
+        idAlumno = 0;
     frmAlumno.addEventListener('submit', e => {
         e.preventDefault();
         guardarAlumno();
@@ -55,9 +57,15 @@
             nombre: txtNombreAlumno.value,
             direccion: txtDireccionAlumno.value,
             telefono: txtTelefonoAlumno.value
+
         },
-            url = 'https://localhost:7005/api/Alumnos',
+            url = 'https://localhost:7199/api/Alumnos',
             method = 'POST';
+        if (accion == "modificar") {
+            method = 'PUT';
+            url = `https://localhost:7199/api/Alumnos/${idAlumno}`;
+            datos.idAlumno = idAlumno;
+        }
         const respuesta = await fetch(url, {
             method,
             headers: {
@@ -67,12 +75,23 @@
         }), alumno = await respuesta.json();
         if ((alumno?.idAlumno || 0) > 0) {
             limpiarDatosAlumno();
+            listarAlumnos();
         }
     }
     function limpiarDatosAlumno() {
+        accion = "nuevo";
+        idAlumno = 0;
         txtCodigoAlumno.value = "";
         txtNombreAlumno.value = "";
         txtDireccionAlumno.value = "";
         txtTelefonoAlumno.value = "";
+    }
+    function modificarAlumno(alumno) {
+        accion = "modificar";
+        idAlumno = alumno.idAlumno;
+        txtCodigoAlumno.value = alumno.codigo;
+        txtNombreAlumno.value = alumno.nombre;
+        txtDireccionAlumno.value = alumno.direccion;
+        txtTelefonoAlumno.value = alumno.telefono;
     }
 </script>

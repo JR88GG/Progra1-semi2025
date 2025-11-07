@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("wepappAcademica")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08604d027ee34186a5a2632d42e389b5cfeab4b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e91494672e3234c9029aaa8279a7f1e7d1fbc17")]
 [assembly: System.Reflection.AssemblyProductAttribute("wepappAcademica")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wepappAcademica")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

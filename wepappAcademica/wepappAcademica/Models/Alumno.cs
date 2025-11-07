@@ -5,7 +5,7 @@ namespace wepappAcademica.Models
     public class Alumno
     {
         [Key]
-        public int IdAlumnos { get; set; }
+        public int idAlumno { get; set; }
         public string codigo { get; set; }
         public string nombre { get; set; }
         public string direccion { get; set; }
