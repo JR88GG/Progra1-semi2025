@@ -1,9 +1,14 @@
+wwwroot\Views\Shared\_ValidationScriptsPartial.cshtml
 wwwroot\img\UGB_LOGOTIPO_HORIZONTAL.webp
 wwwroot\Views\alumno.html
-wwwroot\Views\busqueda_alumno.html
+wwwroot\Views\busqueda_matricula.html
 wwwroot\Views\busqueda_docente.html
 wwwroot\Views\busqueda_materia.html
-wwwroot\Views\index.html
 wwwroot\Views\materia.html
-wwwroot\Views\Shared\_ValidationScriptsPartial.cshtml
 wwwroot\Views\docente.html
+wwwroot\Views\busqueda_alumno.html
+wwwroot\Views\busqueda_periodo.html
+wwwroot\Views\app.js
+wwwroot\Views\periodo.html
+wwwroot\Views\matricula.html
+wwwroot\Views\index.html

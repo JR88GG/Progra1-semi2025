@@ -31,70 +31,50 @@
     </div>
 </form>
 <script>
-    // --- 1. Definimos eliminarAlumno ANTES de crear las filas ---
-    async function eliminarAlumno(alumno, event) {
-        event.preventDefault();
+    listarAlumnos();
 
-        if (confirm(`¿Está seguro de eliminar a ${alumno.nombre.trim()}?`)) {
-            const respuesta = await fetch(`/api/Alumnos/${alumno.idAlumno}`, {
-                method: 'DELETE',
-                headers: { "Content-Type": "application/json" }
-            });
+    txtBuscarAlumno.addEventListener('keyup', e => {
+        listarAlumnos(txtBuscarAlumno.value);
+    });
 
-            const data = await respuesta.text();
-
-            if (data && data.length > 0) {
-                alert(`Error: no se pudo eliminar el alumno ${alumno.nombre}. Detalle: ${data}`);
-                return;
-            }
-
-            alert(`Alumno ${alumno.nombre} eliminado correctamente.`);
-            listarAlumnos(); // recargar la lista
-        }
-    }
-
-    // --- 2. Luego definimos listarAlumnos ---
     async function listarAlumnos(buscar = '') {
-        const respuesta = await fetch(`/api/Alumnos/buscar?buscar=${buscar}`, {
-            method: 'GET',
-            headers: { "Content-Type": "application/json" }
-        });
-
-        console.log('Status:', respuesta.status);
-        const texto = await respuesta.text();
-        console.log('Respuesta cruda:', texto);
-
-        if (!respuesta.ok) {
-            alert(`Error al obtener alumnos (${respuesta.status})`);
-            return;
-        }
-
-        const alumnos = JSON.parse(texto);
-        console.log('Alumnos recibidos:', alumnos);
-
-        let filas = '';
+        let alumnos = await obtenerAlumnos(buscar),
+            filas = '';
         alumnos.forEach(alumno => {
             filas += `
-                <tr onclick='modificarAlumno(${JSON.stringify(alumno)})'>
+                <tr onClick='mostrarDatosAlumno(${JSON.stringify(alumno)})'>
                     <td>${alumno.codigo}</td>
                     <td>${alumno.nombre}</td>
                     <td>${alumno.direccion}</td>
                     <td>${alumno.telefono}</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-danger btn-sm"
-                                onclick='eliminarAlumno(${JSON.stringify(alumno)}, event)'>DEL</button>
-                    </td>
-                </tr>`;
+                    <td><button type="button" class="btn btn-outline-danger btn-sm" onClick='eliminarAlumno(${JSON.stringify(alumno)}, event)'>DEL</button>
+                </tr>
+            `;
         });
-
         document.querySelector("#tblConsultaAlumnos > tbody").innerHTML = filas;
     }
+    async function eliminarAlumno(alumno, event) {
+        event.preventDefault();
 
-    // --- 3. Por último, ejecutamos listarAlumnos ---
-    listarAlumnos();
-
-    // --- 4. Si tienes el buscador ---
-    txtBuscarAlumno.addEventListener('keyup', e => {
-        listarAlumnos(txtBuscarAlumno.value);
-    });
+        if (confirm(`Esta seguro de eliminar a ${alumno.nombre.trim()}?`)) {
+            const respuesta = await fetch(`/api/Alumnos/${alumno.idAlumno}`, {
+                method: 'DELETE',
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }), data = await respuesta.text();
+            if (data && data.length > 0) {
+                alert(`Error, nose pudo eliminar el alumno ${alumno.nombre}, error: ${data}`);
+                return;
+            }
+            listarAlumnos();
+        }
+    }
+    function mostrarDatosAlumno(alumno) {
+        if (formActivo == "matricula") {
+            txtAlumnoMatricula.value = alumno.nombre;
+        } else {
+            modificarAlumno(alumno);
+        }
+    }
 </script>
